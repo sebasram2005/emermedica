@@ -22,7 +22,9 @@ const initialData: LeadFormData = {
   plan: 'familiar',
 };
 
-const API_URL = import.meta.env.VITE_API_URL ?? '/api';
+// En producción (Vercel experimentalServices) el backend vive en /_/backend
+// En desarrollo local apunta al Express en puerto 3001
+const API_URL = import.meta.env.VITE_API_URL ?? '/_/backend/api';
 
 export function useLeadForm(): UseLeadFormReturn {
   const [step, setStep] = useState<1 | 2>(1);
