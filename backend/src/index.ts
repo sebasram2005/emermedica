@@ -12,11 +12,15 @@ const PORT = process.env.PORT ?? 3001;
 const FRONTEND_URL = process.env.FRONTEND_URL ?? 'http://localhost:5173';
 const SITE_URL = process.env.SITE_URL ?? 'https://TU_DOMINIO.com.co';
 
+// Con experimentalServices de Vercel, frontend y backend corren en el mismo
+// dominio, por lo que CORS solo es necesario en desarrollo local.
+const allowedOrigins = [FRONTEND_URL, SITE_URL, /\.vercel\.app$/];
+
 // ── Seguridad ──────────────────────────────────────────────────────────────
 app.use(helmet());
 app.use(cors({
-  origin: [FRONTEND_URL, SITE_URL],
-  methods: ['GET', 'POST'],
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
 }));
 app.use(express.json({ limit: '10kb' }));
