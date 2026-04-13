@@ -74,8 +74,10 @@ export function useLeadForm(): UseLeadFormReturn {
       setIsSuccess(true);
 
       // Push evento a GTM/GA4
-      if (typeof window !== 'undefined' && (window as { dataLayer?: unknown[] }).dataLayer) {
-        (window as { dataLayer: unknown[] }).dataLayer.push({
+      type WinWithDL = Window & typeof globalThis & { dataLayer?: unknown[] }
+      const win = window as WinWithDL
+      if (typeof window !== 'undefined' && win.dataLayer) {
+        win.dataLayer.push({
           event: 'lead_submitted',
           lead_city: formData.city,
           lead_plan: formData.plan,

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { X, MessageCircle } from 'lucide-react'
+import { X } from 'lucide-react'
 
 const WHATSAPP = 'TU_NUMERO_WHATSAPP' // ej: 573001234567
 const MESSAGE  = encodeURIComponent('Hola, necesito información sobre el Plan Integral de Emermédica.')

@@ -89,7 +89,7 @@ export default function SEOHead({ city }: SEOHeadProps) {
 
   const description = isHome
     ? `${BRAND}: atención médica domiciliaria y telemedicina avanzada sin preexistencias, sin copagos, sin límite de edad. Más de 34 años cuidando familias colombianas. Respaldados por AXA Colpatria. Desde $1.000/día por persona.`
-    : `Médico a domicilio en ${city.name} disponible 24 horas los 365 días del año. Sin preexistencias, sin copagos. ${city.people} habitantes protegidos por ${BRAND}. Plan Integral desde $30.000/mes por persona.`
+    : `Médico a domicilio en ${city.name} disponible 24 horas los 365 días del año. Sin preexistencias, sin copagos. ${city.population} de habitantes protegidos por ${BRAND}. Plan Integral desde $30.000/mes por persona.`
 
   const canonical = isHome ? SITE_URL : `${SITE_URL}/${city.slug}`
 
