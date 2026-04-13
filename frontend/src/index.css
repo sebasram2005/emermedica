@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-sans text-slate-800 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+  }
+}
+
+@layer components {
+  /* Botones */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-emerald transition-all duration-200 hover:bg-emerald-dark active:scale-95 shadow-lg shadow-emerald/25 hover:shadow-emerald/40 focus:outline-none focus:ring-2 focus:ring-emerald focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-navy bg-white border-2 border-navy transition-all duration-200 hover:bg-navy hover:text-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 active:scale-95 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: #25D366;
+    box-shadow: 0 4px 14px rgba(37,211,102,0.35);
+  }
+  .btn-whatsapp:hover {
+    background-color: #1ebe57;
+  }
+
+  /* Tarjetas */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-navy text-center;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-slate-500 text-center mt-3 max-w-2xl mx-auto;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-slate-800 placeholder-slate-400 transition-colors duration-200 focus:outline-none focus:border-brand focus:ring-0 text-base;
+  }
+
+  /* FAQ */
+  .faq-item {
+    @apply border-b border-slate-100 last:border-0;
+  }
+
+  /* Gradientes de marca */
+  .bg-navy-gradient {
+    background: linear-gradient(135deg, #1B3A6B 0%, #1565C0 100%);
+  }
+
+  .bg-cyan-gradient {
+    background: linear-gradient(135deg, #00C4CC 0%, #0099A8 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #1B3A6B 0%, #00C4CC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Animación de aparición para secciones */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
