@@ -1,0 +1,11 @@
+{
+  "name": "emermedica",
+  "private": true,
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.2.0"
+  }
+}

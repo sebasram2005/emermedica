@@ -10,7 +10,11 @@
       "Bash(python3 -m json.tool)",
       "Bash(git rm:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m ':*)"
+      "Bash(git commit -m ':*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(node -e \"require\\('@vercel/node'\\); console.log\\('ok'\\)\")"
     ]
   }
 }
